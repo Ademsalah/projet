@@ -28,62 +28,51 @@ const Register2 = () => {
       setPopupOpen(false);
     };
   return (
-    <section className='bodysection'>
-    <div className='bodyrr'>
-    <div className="containerRegister">
-    <h1>Register</h1>
-    <h2>Create a new account</h2>
-    <form >
+    <div  className='bodyR'>
+<div className="container">
+  <div className="text">sejel ro7ik Form</div>
+  <form action="#">
     <div className="form-row">
       <div className="input-data">
         <input type="text" id="username" tabIndex={0} value={name} onChange={(e=>setName(e.target.value))} />
         <div className="underline" />
-        <label >First Name</label>
+        <label htmlFor="">First Name</label>
       </div>
       <div className="input-data">
-        <input type="text" id="username" value={lastName} onChange={(e=>setLastName(e.target.value))}  tabIndex={0}  />
-        <div className="underline" />
-        <label >Last Name</label>
+      <input type="text" id="username" value={lastName} onChange={(e=>setLastName(e.target.value))}  tabIndex={0}  />        <div className="underline" />
+        <label htmlFor="">Last Name</label>
       </div>
     </div>
     <div className="form-row">
       <div className="input-data">
-        <input type="email" id="email" tabIndex={0}  value={email} onChange={(e=>setEmail(e.target.value))}/>
+      <input type="email" id="email" tabIndex={0}  value={email} onChange={(e=>setEmail(e.target.value))}/>
         <div className="underline" />
-        <label >Email Address</label>
+        <label htmlFor="">Email Address</label>
       </div>
       <div className="input-data">
-        <input type="password" id="password"  value={password} onChange={(e=>setPassword(e.target.value))}/>
-        <div className="underline" />
-        <label >password</label>
+      <input type="password" id="password"  value={password} onChange={(e=>setPassword(e.target.value))}/>        <div className="underline" />
+        <label htmlFor="">Password</label>
       </div>
     </div>
-
-    <div class="form-row submit-btn">
-
-    <div className="input-data">
-                  <div className="inner" >
-                  <button type="button" onClick={()=>login({name,lastName,email,password})}  >submmiti </button>
-                    {/* <input type="submit" onClick={()=>login({name,lastName,email,password})} value="submmiti"/> */}
-                  {/* <input type="button" onClick={()=>navigate('/login')} value="3andek compte"/> */}
-                  <button type="button" onClick={()=>navigate('/login')} >3andek compte </button>
-                  </div>
-               </div>
-  </div>
-
-    </form>
-    <Popup open={isPopupOpen} onClose={closePopup} modal>
-          <div>
-            You entered the wrong password or email
-            <a className="close" onClick={closePopup}>
-              &times;
-            </a>
+    <div className="form-row">
+      <div className="input-data textarea">
+        <div className="underline" />
+        <div className="form-row submit-btn">
+          <div className="input-data">
+            <div className="inner" />
+            <input type="button" onClick={()=>navigate('/app/privateRoute')} defaultValue="a3mel tala " />
           </div>
-        </Popup>
-  </div>
+          <div className="input-data">
+            <div className="inner" />
+            <input type="button" onClick={()=>navigate('/login')} defaultValue="logi" />
+          </div>
 
-  </div>
-  </section>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+</div>
   )
 }
 

@@ -1,5 +1,4 @@
 
-import Register from './components/register/Register'
 import Login from './components/login/Login';
 import {Routes,Route} from 'react-router-dom'
 import HomePage from './components/Homepage/HomePage'

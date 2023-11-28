@@ -17,7 +17,8 @@ const Register2 = () => {
       try {
         console.log('Login payload:', value); 
         await postauthUser(value);
-        navigate('/login');
+        await  console.log("hani zidit")
+    navigate('/login')
       } catch (error) {
         console.error('Login error:', error);
         setPopupOpen(true);
@@ -64,7 +65,7 @@ const Register2 = () => {
           </div>
           <div className="input-data">
             <div className="inner" />
-            <input type="button" onClick={()=>navigate('/login')} defaultValue="logi" />
+            <input type="button" onClick={()=>login({name,lastName,email,password})} defaultValue="logi" />
           </div>
 
         </div>

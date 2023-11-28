@@ -4,7 +4,6 @@ import {fetchAuthUser} from '../../api/authuser'
 import Login from '../login/Login'
 
 import Admin from '../Admin/Admin'
-import NavbarContaciner from '../navbar/NavbarContaciner'
 import {useDispatch,useSelector} from 'react-redux'
 import { setAuth } from '../../redux/authSlice'
 import Client from '../User/Client'
@@ -15,13 +14,15 @@ const PrivateRoute = () => {
 
   const authUser = useSelector(state=>state.auth)
 
-  console.log('data auth ',authUser)
+  console.log(' data  auth -_- => ',authUser)
   const getAcount=async()=>{
-   
+    try{
       const data = await fetchAuthUser()
-    console.log('data login', data)
-    dispatch(setAuth(data))
-    
+      console.log('data login =WWWWWWWWWW/*  */', data)
+      await dispatch(setAuth(data)) 
+    }catch(err){
+      console.log(err)
+    }
   }
   
   useEffect(()=>{
@@ -36,7 +37,7 @@ const logout=()=>{
   return (
     <div>
 
-{token ? (<><NavbarContaciner auth={authUser} logout={logout}   />
+{token ? (<>
 {
 authUser.role === "admin" ?  <Admin auth={authUser} logout={logout} /> : <Client auth={authUser} logout={logout} /> 
 

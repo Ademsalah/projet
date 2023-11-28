@@ -3,6 +3,7 @@ import axios from 'axios'
 
 export const postauthUser = async(value)=>{
     const addinguser = await axios.post('http://localhost:4000/auth/register',{...value})
+    console.log(addinguser)
 }
 
 

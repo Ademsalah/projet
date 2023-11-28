@@ -22,8 +22,9 @@ const Login = () => {
 
       const res = await axios.post('http://localhost:4000/auth/login', values);
       console.log('res =>', res.data.token);
-      await localStorage.setItem('token', res.data.token);
-      navigate('/app/privateRoute');
+       await localStorage.setItem('token', res.data.token);
+       await  alert('hana mchin meghir dezen -_- ')
+ navigate('/app/privateRoute'); 
     } catch (err) {
       console.error(err.message);
       if (err.message.includes('email')) {

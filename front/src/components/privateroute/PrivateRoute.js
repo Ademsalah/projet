@@ -8,18 +8,24 @@ import NavbarContaciner from '../navbar/NavbarContaciner'
 import {useDispatch,useSelector} from 'react-redux'
 import { setAuth } from '../../redux/authSlice'
 import Client from '../User/Client'
+
 const PrivateRoute = () => {
   const dispatch =  useDispatch()
   const navigate = useNavigate()
+
   const authUser = useSelector(state=>state.auth)
+
   console.log('data auth ',authUser)
-  const getAuth=async()=>{
-    const data = await fetchAuthUser()
-    console.log('data auth',data)
+  const getAcount=async()=>{
+   
+      const data = await fetchAuthUser()
+    console.log('data login', data)
     dispatch(setAuth(data))
+    
   }
+  
   useEffect(()=>{
-    getAuth()
+    getAcount()
   },[])
 
 const token = localStorage.getItem('token')
@@ -29,13 +35,13 @@ const logout=()=>{
 }
   return (
     <div>
-{
-token ? (<><NavbarContaciner auth={authUser} logout={logout}   />
+
+{token ? (<><NavbarContaciner auth={authUser} logout={logout}   />
 {
 authUser.role === "admin" ?  <Admin auth={authUser} logout={logout} /> : <Client auth={authUser} logout={logout} /> 
 
-}</>):(<Login/>)
-}  
+}</>):(<Login/>)}
+ 
     </div>
     
   )

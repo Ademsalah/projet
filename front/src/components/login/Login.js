@@ -1,53 +1,85 @@
-import React,{useState} from 'react'
-import './Login.css'
-import { useNavigate } from 'react-router-dom'
-import axios from 'axios'
-const Login = () => {
-  const navigate = useNavigate()
-  const [email,setEmail]=useState('')
-  const [password,setPassword]=useState('')
+import React, { useState } from 'react';
+import './Login.css';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
-const handelLogin = async(values)=>{
-try{
-const res = await axios.post('http://localhost:4000/auth/login',values)
-console.log('res =>',res.data.token)
-await localStorage.setItem('token',res.data.token)
-navigate('/app/privateRoute')
-}catch(err){
-  console.log(err)
+const Login = () => {
+  const navigate = useNavigate();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [emailError, setEmailError] = useState(null);
+  const [passwordError, setPasswordError] = useState(null);
+
+  const handleLogin = async (values) => {
+    try {
+      if (!values.email || !values.email.includes('@')) {
+        throw new Error('Invalid email address.');
+      }
+      
+      if (!values.password || values.password.length < 8) {
+        throw new Error('Password must be at least 8 characters long.');
+      }
+
+      const res = await axios.post('http://localhost:4000/auth/login', values);
+      console.log('res =>', res.data.token);
+      await localStorage.setItem('token', res.data.token);
+      navigate('/app/privateRoute');
+    } catch (err) {
+      console.error(err.message);
+      if (err.message.includes('email')) {
+        setEmailError(err.message);
+        setPasswordError(null);
+      } else if (err.message.includes('Password')) {
+        setPasswordError(err.message);
+        setEmailError(null);
+      }
     }
-  }
+  };
 
   return (
+    <div className="bodyLogin">
+      <div className="containerLogin">
+        <h1>Login</h1>
+        <h2>mar7be , 7el kontouk </h2>
+        <form className="form" action="#">
+          <fieldset className="form-fieldset ui-input __second">
+            <input
+              type="email"
+              id="email"
+              tabIndex={0}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <label>
+              <span data-text="E-mail Address">E-mail Address</span>
+            </label>
+            {emailError && <div className="error-message">{emailError}</div>}
+          </fieldset>
 
+          <fieldset className="form-fieldset ui-input __fourth">
+            <input
+              type="password"
+              id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <label>
+              <span data-text="Repeat New Password">Repeat New Password</span>
+            </label>
+            {passwordError && <div className="error-message">{passwordError}</div>}
+          </fieldset>
 
-<div className='body'>
-<div className="container">
-<h1>Login</h1>
-<h2>mar7be , 7el kontouk </h2>
-<form className="form" action="#">
-  
- 
-  <fieldset className="form-fieldset ui-input __second">
-    <input type="email" id="email" tabIndex={0}  value={email} onChange={(e=>setEmail(e.target.value))}/>
-    <label >
-      <span data-text="E-mail Address">E-mail Address</span>
-    </label>
-  </fieldset>
+          <div className="form-footer">
+            <button className="btn" type="button" onClick={() => handleLogin({ email, password })}>
+              Haya Logi
+            </button>
+            <button className="btn" type="button" onClick={() => navigate('/')}>
+arj3 bil tweli             </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+};
 
-  <fieldset className="form-fieldset ui-input __fourth">
-    <input type="password" id="password"  value={password} onChange={(e=>setPassword(e.target.value))}/>
-    <label >
-      <span data-text="Repeat New Password">Repeat New Password</span>
-    </label>
-  </fieldset>
-  <div className="form-footer">
-    <button className="btn" type='button'  onClick={()=>handelLogin({email,password})}>Haya Logi</button>
-  </div>
-</form>
-</div>
-</div>
-  )
-}
-
-export default Login
+export default Login;

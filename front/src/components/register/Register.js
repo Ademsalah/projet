@@ -11,26 +11,48 @@ const Register = () => {
 
   const navigate = useNavigate()
   const login=async(value)=>{
-    await postauthUser(value)
+    try{
+      await postauthUser(value)
+      console.log('login=>')
     navigate('/login')
+    }catch(err){
+      console.log(err)
+      alert("ertyuio")
+    }
   }
   return (
     <div className='bodyRegister'>
-      <div className="containerR" >
-  <div className="top" />
-  <div className="bottom" />
-  <div className="center">
-    <h2>Please Register</h2>
-    <input type="text" placeholder="name" value={name} onChange={(e=>setName(e.target.value))}/>
-    <input type="text" placeholder="lastName" value={lastName} onChange={(e=>setLastName(e.target.value))} />
-    <input type="email" placeholder="email" value={email} onChange={(e=>setEmail(e.target.value))}/>
-    <input type="password" placeholder="password" value={password} onChange={(e=>setPassword(e.target.value))}/>
-    <h2>&nbsp;</h2>
-    <button  type='button' onClick={()=>login({name,lastName,email,password})}>login </button>
-  </div>
-</div>
-
+    <div className="containerR">
+  <div className="text">Contact us Form</div>
+  <form action="#">
+    <div className="form-row">
+      <div className="input-data">
+        <input type="text" id="username" tabIndex={0} value={name} onChange={(e=>setName(e.target.value))} />
+        <div className="underline" />
+        <label htmlFor="">First Name</label>
+      </div>
+      <div className="input-data">
+        <input type="text" id="username" value={lastName} onChange={(e=>setLastName(e.target.value))}  tabIndex={0}  />
+        <div className="underline" />
+        <label htmlFor="">Last Name</label>
+      </div>
     </div>
+    <div className="form-row">
+      <div className="input-data">
+        <input type="email" id="email" tabIndex={0}  value={email} onChange={(e=>setEmail(e.target.value))}/>
+        <div className="underline" />
+        <label htmlFor="">Email Address</label>
+      </div>
+      <div className="input-data">
+        <input type="password" id="password"  value={password} onChange={(e=>setPassword(e.target.value))}/>
+        <div className="underline" />
+        <label htmlFor="">password</label>
+      </div>
+    </div>
+    
+  </form>
+</div>
+</div>
   )
 }
 

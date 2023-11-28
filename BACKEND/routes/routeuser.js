@@ -11,7 +11,7 @@ userRoute.post('/register',registerValidation,validation,register)
 
 userRoute.post('/login',loginValidation,validation,login)
 
-userRoute.get('/moncompte',isAuth,(req,res)=>{
+userRoute.get('/me',isAuth,(req,res)=>{
     res.send(req.user)
     
 })

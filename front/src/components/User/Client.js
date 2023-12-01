@@ -1,8 +1,10 @@
 import React from 'react'
 import './user.css'
+/*  import StadiumCards from '../Cards/StadiumCards'  */
 const Client = ({auth,logout}) => {
   return (
     <div className='bodyF'>
+    {/*   <StadiumCards/> */}
     <div className="app">
     <header className="app-header">
       <div className="app-header-logo">
@@ -108,52 +110,14 @@ const Client = ({auth,logout}) => {
           <div className="mobile-only">
             <button className="flat-button">Toggle search</button>
           </div>
+
+
+        {/*   {
+
+          } */}
           <div className="tiles">
-            <article className="tile">
-              <div className="tile-header">
-                <i className="ph-lightning-light" />
-                <h3>
-                  <span>Electricity</span>
-                  <span>UrkEnergo LTD.</span>
-                </h3>
-              </div>
-              <a href="#">
-                <span>Go to service</span>
-                <span className="icon-button">
-                  <i className="ph-caret-right-bold" />
-                </span>
-              </a>
-            </article>
-            <article className="tile">
-              <div className="tile-header">
-                <i className="ph-fire-simple-light" />
-                <h3>
-                  <span>Heating Gas</span>
-                  <span>Gazprom UA</span>
-                </h3>
-              </div>
-              <a href="#">
-                <span>Go to service</span>
-                <span className="icon-button">
-                  <i className="ph-caret-right-bold" />
-                </span>
-              </a>
-            </article>
-            <article className="tile">
-              <div className="tile-header">
-                <i className="ph-file-light" />
-                <h3>
-                  <span>Tax online</span>
-                  <span>Kharkov 62 str.</span>
-                </h3>
-              </div>
-              <a href="#">
-                <span>Go to service</span>
-                <span className="icon-button">
-                  <i className="ph-caret-right-bold" />
-                </span>
-              </a>
-            </article>
+      {/*    <StadiumCards/> */}
+         
           </div>
           <div className="service-section-footer">
             <p>

@@ -5,16 +5,18 @@ import HomePage from './components/Homepage/HomePage'
 import PrivateRoute from './components/privateroute/PrivateRoute';
 import Register2 from './components/register/Register2';
 import Dorra from './components/Dorra/Dorra';
+import Admin from './components/Admin/Admin';
 function App() {
   return (
     <div >
      <Routes>
       <Route path='/' element ={<HomePage/>}/>
       <Route path='/dorra' element ={<Dorra/>}/>
-
       <Route path='/register' element = {<Register2/>}/>
       <Route path='/login' element = {<Login/>}/>
+      <Route path='/admin' element = {<Admin/>}/>
     <Route path='/app/privateRoute' element = {<PrivateRoute/>}/> 
+    
      </Routes>
 
 

@@ -28,7 +28,7 @@ const HomePage = () => {
           <a href="#">Home</a>
         </li>
         <li>
-          <a href="#">Football spielen</a>
+          <a href='#' >Football spielen</a>
         </li>
         <li>
           <a href="#">Hochzeit</a>

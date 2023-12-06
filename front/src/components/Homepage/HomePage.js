@@ -3,15 +3,12 @@ import React from 'react'
 import './HomePage.css';
 import { useNavigate } from 'react-router-dom';
 const HomePage = () => {
-    const navigate = useNavigate()
+
+const navigate = useNavigate()
+
   return (
     <div>
       <>
-  <meta charSet="UTF-8" />
-  <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="website1" content="This is the first practice html+css website" />
-  <title>First a Website</title>
   <div className="banner">
     <div className="navebarHome">
       <a href="/login">
@@ -23,23 +20,6 @@ const HomePage = () => {
           height="60px"
         />
       </a>
-      <ul>
-        <li>
-          <a href="#">Home</a>
-        </li>
-        <li>
-          <a href='#' >Football spielen</a>
-        </li>
-        <li>
-          <a href="#">Hochzeit</a>
-        </li>
-        <li>
-          <a href="#">Konferenzraum</a>
-        </li>
-        <li>
-          <a href="#">Partyraum </a>
-        </li>
-      </ul>
     </div>
     <div className="contentHome">
       <h1>Jetzt reservieren</h1>
@@ -52,9 +32,9 @@ const HomePage = () => {
           <span />
 dourra w3akla       </button>
         <button type="button" onClick={()=>navigate('/register')}>
-          {" "}
+         
           <span />
-w9ayet besh t9ayet         </button>
+w9ayet besh t9ayet </button>
       </div>
     </div>
   </div>

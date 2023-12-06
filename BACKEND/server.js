@@ -19,10 +19,7 @@ app.use('/auth',userRoute)
 /* partie route yzid beha el admin les stadiums */
 app.use('/stadium',stadiumRoute)
 
-
 /* ///////////////rani nkhdem partie routet teb3in el client /////////////// */
-
-
 
 app.listen(port,err=>{
     err?console.log(err):console.log(`go port ${port} `)

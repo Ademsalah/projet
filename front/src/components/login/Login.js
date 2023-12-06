@@ -26,7 +26,7 @@ const Login = () => {
        await  alert('hana mchin meghir dezen -_- ')
  navigate('/app/privateRoute'); 
     } catch (err) {
-      console.error(err.message);
+      console.log(err.message);
       if (err.message.includes('email')) {
         setEmailError(err.message);
         setPasswordError(null);

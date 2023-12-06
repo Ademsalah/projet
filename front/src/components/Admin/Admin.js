@@ -1,761 +1,131 @@
 import React from 'react'
 import "./Admin.css"
-const Admin = () => {
+import StadiumCards from './zidenkeryet/Cards/StadiumCards'
+import {useNavigate} from 'react-router-dom'
+const Admin = ({auth}) => {
+  const navigate = useNavigate()
+  console.log('nthbtou foil aut',auth)
   return (
-    <div>
-      <>
-  
-    
-  
-    
-      
-      <section className="main-content">
-        <div className="app">
-          <header className="sub-menu">
-            <div className="title"> Projects </div>
-            {<ul className="menu">
-              <li>
-                {" "}
-                All
-                <div className="badge"> 87 </div>
-              </li>
-              <li className="selected">
-                {" "}
-                Current
-                <div className="badge"> 6 </div>
-              </li>
-              <li>
-                {" "}
-                Pending
-                <div className="badge"> 2 </div>
-              </li>
-              <li>
-                {" "}
-                Completed
-                <div className="badge"> 79 </div>
-              </li>
-              <li> Failed </li>
-            </ul>}
-            <div className="user-options">
-              <div className="icon">
-                {" "}
-                <i className="fa fa-search" aria-hidden="true" />{" "}
-              </div>
-              <div className="icon">
-                {" "}
-                <i className="fa fa-bell-o" aria-hidden="true" />
-                <div className="badge"> 3 </div>
-              </div>
-              <div className="icon user-img">
-                {" "}
-                <img
-                  src="https://source.unsplash.com/36x36/?human"
-                  alt="Image 001"
-                />{" "}
-              </div>
+    <div className='bodyAdmin'>
+    <header className="header">
+      <div className="header-content responsive-wrapper">
+        <div className="header-logo">
+          <a href="#">
+            <div>
+              <img src="https://assets.codepen.io/285131/untitled-ui-icon.svg" />
             </div>
-          </header>
-          <section className="app-content">
-            <header>
-              <div className="searchbox">
-                <div className="icon">
-                  {" "}
-                  <i className="fa fa-search" aria-hidden="true" />{" "}
-                </div>
-                <input
-                  type="text"
-                  name="search"
-                  placeholder="Search a project"
-                  className="search-text"
-                />
-              </div>
-              <div className="app-list-options">
-     
-                  </div>
-               
-             
-            </header>
-            <ul className="projects">
-              <li className="project-item">
-                <div className="logo-row">
-                  {" "}
-                  <img
-                    src="https://source.unsplash.com/48x48/?brands"
-                    alt="Image 001"
-                  />
-                  <div className="icon">
-                    {" "}
-                    <i
-                      className="fa fa-ellipsis-h icon"
-                      aria-hidden="true"
-                    />{" "}
-                  </div>
-                </div>
-                
-                
-                <div className="progress-row">
-                  <p
-                    className="value-label"
-                    style={{ width: "94%" }}
-                    data-value={94}
-                  />
-                  <progress max={100} value={94} data-value={94}>
-                    {" "}
-                    94%{" "}
-                  </progress>
-                </div>
-                <div className="footer-row">
-                  <div className="days danger">
-                    {" "}
-                    <i className="fa fa-clock-o icon" aria-hidden="true" /> 2
-                    days left{" "}
-                  </div>
-                  <div className="users">
-                    <img
-                      src="https://source.unsplash.com/24x24/?human"
-                      alt="Image 001"
-                    />
-                    <img
-                      src="https://source.unsplash.com/24x24/?humans"
-                      alt="Image 001"
-                    />
-                  </div>
-                </div>
-              </li>
-              <li className="project-item">
-                <div className="logo-row">
-                  {" "}
-                  <img
-                    src="https://source.unsplash.com/48x48/?brand"
-                    alt="Image 001"
-                  />
-                  <div className="icon">
-                    {" "}
-                    <i
-                      className="fa fa-ellipsis-h icon"
-                      aria-hidden="true"
-                    />{" "}
-                  </div>
-                </div>
-                <div className="title-row">
-                  <h3> Homechoice </h3>
-                  <div className="links">
-                    {" "}
-                    <i
-                      className="fa fa-external-link icon"
-                      aria-hidden="true"
-                    />{" "}
-                    <a href="#"> homchoice.com </a>{" "}
-                  </div>
-                </div>
-                <div className="desc-row">
-                  <p>
-                    {" "}
-                    Web resource which contains all about transfer in the world
-                    of sports.{" "}
-                  </p>
-                </div>
-                <div className="progress-row">
-                  <p
-                    className="value-label"
-                    style={{ width: "64%" }}
-                    data-value={64}
-                  />
-                  <progress max={100} value={64} data-value={64}>
-                    {" "}
-                    64%{" "}
-                  </progress>
-                </div>
-                <div className="footer-row">
-                  <div className="days warning">
-                    {" "}
-                    <i className="fa fa-clock-o icon" aria-hidden="true" /> 4
-                    days left{" "}
-                  </div>
-                  <div className="users">
-                    <img
-                      src="https://source.unsplash.com/24x24/?human"
-                      alt="Image 001"
-                    />
-                    <img
-                      src="https://source.unsplash.com/24x24/?humans"
-                      alt="Image 001"
-                    />
-                  </div>
-                </div>
-              </li>
-              <li className="project-item">
-                <div className="logo-row">
-                  {" "}
-                  <img
-                    src="https://source.unsplash.com/48x48/?icon"
-                    alt="Image 001"
-                  />
-                  <div className="icon">
-                    {" "}
-                    <i
-                      className="fa fa-ellipsis-h icon"
-                      aria-hidden="true"
-                    />{" "}
-                  </div>
-                </div>
-                <div className="title-row">
-                  <h3> Big Money Real Estate </h3>
-                  <div className="links">
-                    {" "}
-                    <i
-                      className="fa fa-external-link icon"
-                      aria-hidden="true"
-                    />{" "}
-                    <a href="#"> bigmoneyrealestate.com </a>{" "}
-                  </div>
-                </div>
-                <div className="desc-row">
-                  <p>
-                    {" "}
-                    Web resource which contains all about transfer in the world
-                    of sports.{" "}
-                  </p>
-                </div>
-                <div className="progress-row">
-                  <p
-                    className="value-label"
-                    style={{ width: "59%" }}
-                    data-value={59}
-                  />
-                  <progress max={100} value={59} data-value={59}>
-                    {" "}
-                    59%{" "}
-                  </progress>
-                </div>
-                <div className="footer-row">
-                  <div className="days warning">
-                    {" "}
-                    <i className="fa fa-clock-o icon" aria-hidden="true" /> 5
-                    days left{" "}
-                  </div>
-                  <div className="users">
-                    <img
-                      src="https://source.unsplash.com/24x24/?human"
-                      alt="Image 001"
-                    />
-                    <img
-                      src="https://source.unsplash.com/24x24/?humans"
-                      alt="Image 001"
-                    />
-                  </div>
-                </div>
-              </li>
-              <li className="project-item">
-                <div className="logo-row">
-                  {" "}
-                  <img
-                    src="https://source.unsplash.com/48x48/?adventure"
-                    alt="Image 001"
-                  />
-                  <div className="icon">
-                    {" "}
-                    <i
-                      className="fa fa-ellipsis-h icon"
-                      aria-hidden="true"
-                    />{" "}
-                  </div>
-                </div>
-                <div className="title-row">
-                  <h3> Springfield media </h3>
-                  <div className="links">
-                    {" "}
-                    <i
-                      className="fa fa-external-link icon"
-                      aria-hidden="true"
-                    />{" "}
-                    <a href="#"> springfieldmedia.com </a>{" "}
-                  </div>
-                </div>
-                <div className="desc-row">
-                  <p>
-                    {" "}
-                    Web resource which contains all about transfer in the world
-                    of sports.{" "}
-                  </p>
-                </div>
-                <div className="progress-row">
-                  <p
-                    className="value-label"
-                    style={{ width: "94%" }}
-                    data-value={94}
-                  />
-                  <progress max={100} value={94} data-value={94}>
-                    {" "}
-                    94%{" "}
-                  </progress>
-                </div>
-                <div className="footer-row">
-                  <div className="days">
-                    {" "}
-                    <i className="fa fa-clock-o icon" aria-hidden="true" /> 7
-                    days left{" "}
-                  </div>
-                  <div className="users">
-                    <img
-                      src="https://source.unsplash.com/24x24/?human"
-                      alt="Image 001"
-                    />
-                    <img
-                      src="https://source.unsplash.com/24x24/?humans"
-                      alt="Image 001"
-                    />
-                  </div>
-                </div>
-              </li>
-              <li className="project-item">
-                <div className="logo-row">
-                  {" "}
-                  <img
-                    src="https://source.unsplash.com/48x48/?flower"
-                    alt="Image 001"
-                  />
-                  <div className="icon">
-                    {" "}
-                    <i
-                      className="fa fa-ellipsis-h icon"
-                      aria-hidden="true"
-                    />{" "}
-                  </div>
-                </div>
-                <div className="title-row">
-                  <h3> Regular Logistics </h3>
-                  <div className="links">
-                    {" "}
-                    <i
-                      className="fa fa-external-link icon"
-                      aria-hidden="true"
-                    />{" "}
-                    <a href="#"> regularlogistics.com </a>{" "}
-                  </div>
-                </div>
-                <div className="desc-row">
-                  <p>
-                    {" "}
-                    Web resource which contains all about transfer in the world
-                    of sports.{" "}
-                  </p>
-                </div>
-                <div className="progress-row">
-                  <p
-                    className="value-label"
-                    style={{ width: "44%" }}
-                    data-value={44}
-                  />
-                  <progress max={100} value={44} data-value={44}>
-                    {" "}
-                    94%{" "}
-                  </progress>
-                </div>
-                <div className="footer-row">
-                  <div className="days">
-                    {" "}
-                    <i className="fa fa-clock-o icon" aria-hidden="true" /> 9
-                    days left{" "}
-                  </div>
-                  <div className="users">
-                    <img
-                      src="https://source.unsplash.com/24x24/?human"
-                      alt="Image 001"
-                    />
-                    <img
-                      src="https://source.unsplash.com/24x24/?humans"
-                      alt="Image 001"
-                    />
-                  </div>
-                </div>
-              </li>
-              <li className="project-item">
-                <div className="logo-row">
-                  {" "}
-                  <img
-                    src="https://source.unsplash.com/48x48/?brands"
-                    alt="Image 001"
-                  />
-                  <div className="icon">
-                    {" "}
-                    <i
-                      className="fa fa-ellipsis-h icon"
-                      aria-hidden="true"
-                    />{" "}
-                  </div>
-                </div>
-                <div className="title-row">
-                  <h3> Foursquare Agency </h3>
-                  <div className="links">
-                    {" "}
-                    <i
-                      className="fa fa-external-link icon"
-                      aria-hidden="true"
-                    />{" "}
-                    <a href="#"> foursquareagency.com </a>{" "}
-                  </div>
-                </div>
-                <div className="desc-row">
-                  <p>
-                    {" "}
-                    Web resource which contains all about transfer in the world
-                    of sports.{" "}
-                  </p>
-                </div>
-                <div className="progress-row">
-                  <p
-                    className="value-label"
-                    style={{ width: "39%" }}
-                    data-value={39}
-                  />
-                  <progress max={100} value={39} data-value={39}>
-                    {" "}
-                    39%{" "}
-                  </progress>
-                </div>
-                <div className="footer-row">
-                  <div className="days danger">
-                    {" "}
-                    <i className="fa fa-clock-o icon" aria-hidden="true" /> 11
-                    days left{" "}
-                  </div>
-                  <div className="users">
-                    <img
-                      src="https://source.unsplash.com/24x24/?human"
-                      alt="Image 001"
-                    />
-                    <img
-                      src="https://source.unsplash.com/24x24/?humans"
-                      alt="Image 001"
-                    />
-                  </div>
-                </div>
-              </li>
-              <li className="project-item">
-                <div className="logo-row">
-                  {" "}
-                  <img
-                    src="https://source.unsplash.com/48x48/?r"
-                    alt="Image 001"
-                  />
-                  <div className="icon">
-                    {" "}
-                    <i
-                      className="fa fa-ellipsis-h icon"
-                      aria-hidden="true"
-                    />{" "}
-                  </div>
-                </div>
-                <div className="title-row">
-                  <h3> Piece Studio </h3>
-                  <div className="links">
-                    {" "}
-                    <i
-                      className="fa fa-external-link icon"
-                      aria-hidden="true"
-                    />{" "}
-                    <a href="#"> piecestudio.com </a>{" "}
-                  </div>
-                </div>
-                <div className="desc-row">
-                  <p>
-                    {" "}
-                    Web resource which contains all about transfer in the world
-                    of sports.{" "}
-                  </p>
-                </div>
-                <div className="progress-row">
-                  <p
-                    className="value-label"
-                    style={{ width: "34%" }}
-                    data-value={34}
-                  />
-                  <progress
-                    max={100}
-                    value={34}
-                    data-value={34}
-                    className="low"
-                  >
-                    {" "}
-                    34%{" "}
-                  </progress>
-                </div>
-                <div className="footer-row">
-                  <div className="days">
-                    {" "}
-                    <i className="fa fa-clock-o icon" aria-hidden="true" /> 12
-                    days left{" "}
-                  </div>
-                  <div className="users">
-                    <img
-                      src="https://source.unsplash.com/24x24/?human"
-                      alt="Image 001"
-                    />
-                    <img
-                      src="https://source.unsplash.com/24x24/?humans"
-                      alt="Image 001"
-                    />
-                  </div>
-                </div>
-              </li>
-              <li className="project-item">
-                <div className="logo-row">
-                  {" "}
-                  <img
-                    src="https://source.unsplash.com/48x48/?sanfrancisco"
-                    alt="Image 001"
-                  />
-                  <div className="icon">
-                    {" "}
-                    <i
-                      className="fa fa-ellipsis-h icon"
-                      aria-hidden="true"
-                    />{" "}
-                  </div>
-                </div>
-                <div className="title-row">
-                  <h3> Legacy Foundation </h3>
-                  <div className="links">
-                    {" "}
-                    <i
-                      className="fa fa-external-link icon"
-                      aria-hidden="true"
-                    />{" "}
-                    <a href="#"> legacyfoundation.com </a>{" "}
-                  </div>
-                </div>
-                <div className="desc-row">
-                  <p>
-                    {" "}
-                    Web resource which contains all about transfer in the world
-                    of sports.{" "}
-                  </p>
-                </div>
-                <div className="progress-row">
-                  <p
-                    className="value-label"
-                    style={{ width: "32%" }}
-                    data-value={32}
-                  />
-                  <progress max={100} value={32} data-value={94}>
-                    {" "}
-                    32%{" "}
-                  </progress>
-                </div>
-                <div className="footer-row">
-                  <div className="days">
-                    {" "}
-                    <i className="fa fa-clock-o icon" aria-hidden="true" /> 12
-                    days left{" "}
-                  </div>
-                  <div className="users">
-                    <img
-                      src="https://source.unsplash.com/24x24/?human"
-                      alt="Image 001"
-                    />
-                    <img
-                      src="https://source.unsplash.com/24x24/?humans"
-                      alt="Image 001"
-                    />
-                  </div>
-                </div>
-              </li>
-              <li className="project-item">
-                <div className="logo-row">
-                  {" "}
-                  <img
-                    src="https://source.unsplash.com/48x48/?brands"
-                    alt="Image 001"
-                  />
-                  <div className="icon">
-                    {" "}
-                    <i
-                      className="fa fa-ellipsis-h icon"
-                      aria-hidden="true"
-                    />{" "}
-                  </div>
-                </div>
-                <div className="title-row">
-                  <h3> Sports Interactive </h3>
-                  <div className="links">
-                    {" "}
-                    <i
-                      className="fa fa-external-link icon"
-                      aria-hidden="true"
-                    />{" "}
-                    <a href="#"> sportsinteractive.com </a>{" "}
-                  </div>
-                </div>
-                <div className="desc-row">
-                  <p>
-                    {" "}
-                    Web resource which contains all about transfer in the world
-                    of sports.{" "}
-                  </p>
-                </div>
-                <div className="progress-row">
-                  <p
-                    className="value-label"
-                    style={{ width: "94%" }}
-                    data-value={94}
-                  />
-                  <progress max={100} value={94} data-value={94}>
-                    {" "}
-                    94%{" "}
-                  </progress>
-                </div>
-                <div className="footer-row">
-                  <div className="days danger">
-                    {" "}
-                    <i className="fa fa-clock-o icon" aria-hidden="true" /> 2
-                    days left{" "}
-                  </div>
-                  <div className="users">
-                    <img
-                      src="https://source.unsplash.com/24x24/?human"
-                      alt="Image 001"
-                    />
-                    <img
-                      src="https://source.unsplash.com/24x24/?humans"
-                      alt="Image 001"
-                    />
-                  </div>
-                </div>
-              </li>
-              <li className="project-item">
-                <div className="logo-row">
-                  {" "}
-                  <img
-                    src="https://source.unsplash.com/48x48/?brands"
-                    alt="Image 001"
-                  />
-                  <div className="icon">
-                    {" "}
-                    <i
-                      className="fa fa-ellipsis-h icon"
-                      aria-hidden="true"
-                    />{" "}
-                  </div>
-                </div>
-                <div className="title-row">
-                  <h3> Sports Interactive </h3>
-                  <div className="links">
-                    {" "}
-                    <i
-                      className="fa fa-external-link icon"
-                      aria-hidden="true"
-                    />{" "}
-                    <a href="#"> sportsinteractive.com </a>{" "}
-                  </div>
-                </div>
-                <div className="desc-row">
-                  <p>
-                    {" "}
-                    Web resource which contains all about transfer in the world
-                    of sports.{" "}
-                  </p>
-                </div>
-                <div className="progress-row">
-                  <p
-                    className="value-label"
-                    style={{ width: "94%" }}
-                    data-value={94}
-                  />
-                  <progress max={100} value={94} data-value={94}>
-                    {" "}
-                    94%{" "}
-                  </progress>
-                </div>
-                <div className="footer-row">
-                  <div className="days danger">
-                    {" "}
-                    <i className="fa fa-clock-o icon" aria-hidden="true" /> 2
-                    days left{" "}
-                  </div>
-                  <div className="users">
-                    <img
-                      src="https://source.unsplash.com/24x24/?human"
-                      alt="Image 001"
-                    />
-                    <img
-                      src="https://source.unsplash.com/24x24/?humans"
-                      alt="Image 001"
-                    />
-                  </div>
-                </div>
-              </li>
-              <li className="project-item">
-                <div className="logo-row">
-                  {" "}
-                  <img
-                    src="https://source.unsplash.com/48x48/?brands"
-                    alt="Image 001"
-                  />
-                  <div className="icon">
-                    {" "}
-                    <i
-                      className="fa fa-ellipsis-h icon"
-                      aria-hidden="true"
-                    />{" "}
-                  </div>
-                </div>
-                <div className="title-row">
-                  <h3> Legacy Foundation </h3>
-                  <div className="links">
-                    {" "}
-                    <i
-                      className="fa fa-external-link icon"
-                      aria-hidden="true"
-                    />{" "}
-                    <a href="#"> legacyfoundation.com </a>{" "}
-                  </div>
-                </div>
-                <div className="desc-row">
-                  <p>
-                    {" "}
-                    Web resource which contains all about transfer in the world
-                    of sports.{" "}
-                  </p>
-                </div>
-                <div className="progress-row">
-                  <p
-                    className="value-label"
-                    style={{ width: "32%" }}
-                    data-value={32}
-                  />
-                  <progress max={100} value={32} data-value={32}>
-                    {" "}
-                    32%{" "}
-                  </progress>
-                </div>
-                <div className="footer-row">
-                  <div className="days danger">
-                    {" "}
-                    <i className="fa fa-clock-o icon" aria-hidden="true" /> 2
-                    days left{" "}
-                  </div>
-                  <div className="users">
-                    <img
-                      src="https://source.unsplash.com/24x24/?human"
-                      alt="Image 001"
-                    />
-                    <img
-                      src="https://source.unsplash.com/24x24/?humans"
-                      alt="Image 001"
-                    />
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </section>
+            <img src="https://assets.codepen.io/285131/untitled-ui.svg" />
+          </a>
         </div>
-      </section>
-    
+        <div className="header-navigation">
+          <nav className="header-navigation-links">
+            <a href="#"> {auth.name} </a>
+            <a href="#"> Dashboard </a>
+            <a href="#"> Projects </a>
+            <a href="#"> Tasks </a>
+            <a href="#"> Reporting </a>
+            <a href="#"> Users </a>
+          </nav>
+          <div className="header-navigation-actions">
+            <a href="#" className="button">
+              <i className="ph-lightning-bold" />
+              <span>Upgrade now</span>
+            </a>
+            <a href="#" className="icon-button">
+              <i className="ph-gear-bold" />
+            </a>
+            <a href="#" className="icon-button">
+              <i className="ph-bell-bold" />
+            </a>
+            <a href="#" className="avatar">
+              <img src="https://assets.codepen.io/285131/hat-man.png" alt="" />
+            </a>
+          </div>
+        </div>
+        <a href="#" className="button">
+          <i className="ph-list-bold" />
+          <span>Menu</span>
+        </a>
+      </div>
+    </header>
+    <main className="main">
+      <div className="responsive-wrapper">
+        <div className="main-header">
+          <h1>Settings</h1>
+          <div className="search">
+            <input type="text" placeholder="Search" />
+            <button type="submit">
+              <i className="ph-magnifying-glass-bold" />
+            </button>
+          </div>
+        </div>
+        <div className="horizontal-tabs">
+          <a href="#">My details</a>
+          <a href="#">Profile</a>
+          <a href="#">Password</a>
+          <a href="#">Team</a>
+          <a href="#">Plan</a>
+          <a href="#">Billing</a>
+          <a href="#">Email</a>
+          <a href="#">Notifications</a>
+          <a href="#" className="active">
+            Integrations
+          </a>
+          <a href="#">API</a>
+        </div>
+        <div className="content-header">
+          <div className="content-header-intro">
+            <h2>Intergrations and connected apps</h2>
+            <p>
+              Supercharge your workflow and connect the tool you use every day.
+            </p>
+          </div>
+          <div className="content-header-actions">
+            <a href="#" className="button">
+              <i className="ph-faders-bold" />
+              <span>Filters</span>
+            </a>
+            <a href="#" className="button">
+              <i className="ph-plus-bold" />
+              <span>Request integration</span>
+            </a>
+          </div>
+        </div>
+        <div className="content">
+          <div className="content-panel">
+            <div className="vertical-tabs">
+              <a href="#" className="active">
+                View all
+              </a>
+              <a href="/zidstadium">Add Services</a>
+              <a href="#">view Users </a>
+              <a href="#">Reservation</a>
+              <a href="#">payment files</a>
+              <a href="#">Marketplace</a>
+            </div>
+          </div>
+          <div className="content-main">
+            <div className="card-grid">
+           
+        <StadiumCards auth={auth}   />
+            
+            
+          
+           
+           
+           
+            
+           
+           
+              
+             
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
   
-</>
-
-    </div>
   )
 }
 

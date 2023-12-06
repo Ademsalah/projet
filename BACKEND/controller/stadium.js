@@ -20,10 +20,10 @@ exports.Getstadium=async(req,res)=>{
         }
     }
 
-    exports.Updatestadium = async(req,res)=>{
+    exports.UpdateStadium = async(req,res)=>{
         const {id}= req.params
         try{
-            const updatedUser = await stadiumSchema.findByIdAndUpdate(id,{$set:{...req.body}})
+            const UpdateStadium = await stadiumSchema.findByIdAndUpdate(id,{$set:{...req.body}})
     res.status(200).send('the stadiums is updated ')
         }catch(err){
             res.status(500).send('u didnt do it  , no stadiums is not  updated')
@@ -38,7 +38,7 @@ exports.Getstadium=async(req,res)=>{
     res.status(200).send({getuser})
         }catch(err){
             console.log(err)
-            res.status(500).send('there is no getting stadiums naw ')
+            res.status(500).send('there is no getting stadiums now ')
             
         }
     }

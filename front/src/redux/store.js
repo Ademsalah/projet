@@ -4,6 +4,6 @@ import StadiumsSlice from './StadiumsSlice'
 export default configureStore({
     reducer:{
         auth : authSlice,
-        StadiumsSlice:StadiumsSlice
+        Stadiums:StadiumsSlice
     }
 }) 

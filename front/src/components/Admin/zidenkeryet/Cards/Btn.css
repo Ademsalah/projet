@@ -1,0 +1,20 @@
+.card button {
+    
+    width: 141px;
+    height: 60px;
+    border: none;
+    border-radius: 5px;
+    background: #fff;
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #666;
+    box-shadow: 0 6px 6px #06f;
+    outline: none;
+  }
+ button:active {
+    /* set time duration to your needs */
+    animation: gradient 100ms;
+    background: rgb(7, 7, 45);
+    color: #fff;
+    box-shadow: none;
+  }

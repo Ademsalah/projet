@@ -28,7 +28,7 @@ console.log(id)
       const handleSubmit=async(id,newValue)=>{
       try{
         await updateStadiums(id,newValue)
-    // console.log('addingContact',handleSubmit),
+        await alert('you did it ')
      navigate('/admin')
       }catch(err){
         console.log(err)
@@ -56,14 +56,14 @@ console.log(id)
                 onChange={(e) => setName(e.target.value)}
                 value={name}
               />
-              <label className="label">Img</label>
+              <label className="label">price</label>
               <input
                 className="input"
                 type="text"
                 onChange={(e) => setPrice(e.target.value)}
                 value={price}
               />
-              <label className="label">Price</label>
+              <label className="label">postUrl</label>
               <input
                 className="input"
                 type="text"
@@ -82,7 +82,7 @@ console.log(id)
 
           <section className="ButtonsContainer">
             <div className="SignInButtonContainer">
-              <button onClick={()=>handleSubmit(id,{name,price,postUrl,rating})} className="SigninButton">
+              <button type='button'   onClick={()=>handleSubmit(id,{name,price,postUrl,rating})} className="SigninButton">
                 ziiiid hbibi
               </button>
             </div>

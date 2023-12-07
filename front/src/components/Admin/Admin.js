@@ -7,7 +7,7 @@ const Admin = ({auth}) => {
   console.log('nthbtou foil aut',auth)
   return (
     <div className='bodyAdmin'>
-    <header className="header">
+    <header className="headerAdmin">
       <div className="header-content responsive-wrapper">
         <div className="header-logo">
           <a href="#">
@@ -19,7 +19,7 @@ const Admin = ({auth}) => {
         </div>
         <div className="header-navigation">
           <nav className="header-navigation-links">
-            <a href="#"> {auth.name} </a>
+            <a href="#"> Home </a>
             <a href="#"> Dashboard </a>
             <a href="#"> Projects </a>
             <a href="#"> Tasks </a>
@@ -27,7 +27,7 @@ const Admin = ({auth}) => {
             <a href="#"> Users </a>
           </nav>
           <div className="header-navigation-actions">
-            <a href="#" className="button">
+            <a href="#" className="buttonAdmin">
               <i className="ph-lightning-bold" />
               <span>Upgrade now</span>
             </a>
@@ -42,7 +42,7 @@ const Admin = ({auth}) => {
             </a>
           </div>
         </div>
-        <a href="#" className="button">
+        <a href="#" className="buttonAdmin">
           <i className="ph-list-bold" />
           <span>Menu</span>
         </a>
@@ -73,19 +73,14 @@ const Admin = ({auth}) => {
           </a>
           <a href="#">API</a>
         </div>
-        <div className="content-header">
-          <div className="content-header-intro">
-            <h2>Intergrations and connected apps</h2>
-            <p>
-              Supercharge your workflow and connect the tool you use every day.
-            </p>
-          </div>
-          <div className="content-header-actions">
-            <a href="#" className="button">
+        <div className="content-headerAdmin">
+       
+          <div className="content-headerAdmin-actions">
+            <a href="#" className="buttonAdmin">
               <i className="ph-faders-bold" />
               <span>Filters</span>
             </a>
-            <a href="#" className="button">
+            <a href="#" className="buttonAdmin">
               <i className="ph-plus-bold" />
               <span>Request integration</span>
             </a>
@@ -97,27 +92,16 @@ const Admin = ({auth}) => {
               <a href="#" className="active">
                 View all
               </a>
-              <a href="/zidstadium">Add Services</a>
-              <a href="#">view Users </a>
-              <a href="#">Reservation</a>
-              <a href="#">payment files</a>
+              <a href="#">Developer tools</a>
+              <a href="#">Communication</a>
+              <a href="#">Productivity</a>
+              <a href="#">Browser tools</a>
               <a href="#">Marketplace</a>
             </div>
           </div>
           <div className="content-main">
             <div className="card-grid">
-           
-        <StadiumCards auth={auth}   />
-            
-            
-          
-           
-           
-           
-            
-           
-           
-              
+              <StadiumCards/>
              
             </div>
           </div>
@@ -128,5 +112,4 @@ const Admin = ({auth}) => {
   
   )
 }
-
 export default Admin

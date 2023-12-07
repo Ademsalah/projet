@@ -5,7 +5,7 @@ const Client = ({auth,logout}) => {
   return (
     <div className='bodyF'>
     {/*   <StadiumCards/> */}
-    <div className="app">
+    <div className="appClient">
     <header className="app-header">
       <div className="app-header-logo">
         <div className="logo">

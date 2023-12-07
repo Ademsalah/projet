@@ -1,11 +1,11 @@
 import React from 'react'
-import './Dorra.css'
+//import './Dorra.css'
 import StadiumCards from '../Admin/zidenkeryet/Cards/StadiumCards'
 const Dorra = () => {
   return (
     <div className='bodyF'>
     {/*   <StadiumCards/> */}
-    <div className="app">
+    <div className="appDorra">
     <header className="app-header">
       <div className="app-header-logo">
         <div className="logo">

@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react'
-/* import "./StadiumCards.css"
- */import { useSelector } from 'react-redux'
+ /* import "./StadiumCards.css" */
+ import "./Btn.css" 
+import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
-import { fetchStadiums } from '../../../../api/admin/stadiumApi'
+import { deletStadiums, fetchStadiums } from '../../../../api/admin/stadiumApi'
 import { setStadium } from '../../../../redux/StadiumsSlice'
 import { Link, useNavigate } from 'react-router-dom'
 const StadiumCards = ({auth}) => {
   console.log('auth admin statdi ',auth)
- const Sstadium = useSelector(state=>state.StadiumsSlice)
-    console.log('StadiumsSlice Sstadium',Sstadium._id)
+ const Sstadium = useSelector(state=>state.Stadiums)
+    console.log('StadiumsSlice Sstadium Sstadium',Sstadium)
 const dispatch = useDispatch()
 const navigate=useNavigate()
 
@@ -27,33 +28,36 @@ const update=()=>{
   navigate(`/zidstadium/${Sstadium._id}`)
   console.log(Sstadium);
 }
+const del=async(id)=>{
+  await deletStadiums(id);
+  getAllSstadium()
+}
   return (
     <>
  {
     Sstadium.map((el)=> (<>               
    
-   <article className="card">
-                <div className="card-header">
+   <article className="cardSstadium"  style={{border:"1px solid black",backgroundColor:"#686b87"}}>
+                <div className="cardSstadiumheader">
                   <div>
                     <span>
-                      <img src={el.postUrl} />
-                    </span>
-                    <h3> {el.name} </h3>
+                    <img src={el.postUrl} />
+                  </span>
+                  <h3> {el.name} </h3> 
                   </div>
                   <label className="toggle">
-                    <input type="checkbox" defaultChecked="" />
-                    <span />
+                  <input type="checkbox" defaultChecked="" />
+                  <span />
                   </label>
                 </div>
-                <div className="card-body">
+                <div className="cardSstadiumbody">
                   <p> {el.rating} ||  </p>
                 </div>
-              {
-                auth ? (  <button className="card-footer">
-                <a href=""> <Link to={`/zidstadium/${el._id}`}> uppdate</Link>  </a>
-              </button>):(<button>view more </button>)
-              }
-              </article> 
+ <div  style={{display:"flex",justifyContent:"space-around",margin:"-5px"}} >
+ <button><Link to={`/zidstadium/${el._id}`}> update ?</Link></button>
+  <button  onClick={()=>del(el._id)}  >remove</button>
+ </div>
+   </article> 
    </>)   )
    } 
     

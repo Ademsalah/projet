@@ -7,7 +7,7 @@ const AjoutStadium = () => {
   const navigate=useNavigate()
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
-  const [posterURL, setPosterURL] = useState(""); 
+  const [postUrl, setPostUrl] = useState(""); 
   const [rating, setRating] = useState(""); 
 
   const handleSubmit=async(value)=>{
@@ -43,12 +43,12 @@ const AjoutStadium = () => {
                 onChange={(e) => setPrice(e.target.value)}
                 value={price}
               />
-              <label className="label">Price</label>
+              <label className="label">posterURL</label>
               <input
                 className="input"
                 type="text"
-                onChange={(e) => setPosterURL(e.target.value)}
-                value={posterURL}
+                onChange={(e) => setPostUrl(e.target.value)}
+                value={postUrl}
               />
               <label className="label">Rating</label>
               <input
@@ -62,7 +62,7 @@ const AjoutStadium = () => {
 
           <section className="ButtonsContainer">
             <div className="SignInButtonContainer">
-              <button onClick={()=>handleSubmit({name,price,posterURL,rating})} className="SigninButton">
+              <button onClick={()=>handleSubmit({name,price,postUrl,rating})} className="SigninButton">
                 ziiiid hbibi
               </button>
             </div>

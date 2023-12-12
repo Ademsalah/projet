@@ -23,4 +23,7 @@ stadiumRoute.put('/updatystadium/:id',UpdateStadium)
 
 stadiumRoute.get('/jibw7dastadium/:id',GetById)
 
+
+
+
 module.exports = stadiumRoute

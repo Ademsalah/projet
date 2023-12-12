@@ -2,24 +2,29 @@ import React from 'react'
 import "./Admin.css"
 import StadiumCards from './zidenkeryet/Cards/StadiumCards'
 import {useNavigate} from 'react-router-dom'
-const Admin = ({auth}) => {
+import AjoutStadium from './zidenkeryet/AjoutStadium/AjoutStatdium'
+import { useSelector } from 'react-redux'
+const Admin = ({auth,logout}) => {
+
+  const authUser = useSelector(state=>state.auth)
+
   const navigate = useNavigate()
-  console.log('nthbtou foil aut',auth)
+  console.log('nthbtou foil aut',authUser)
+  const gotoaddstadiums = async()=>{
+
+    navigate("/zidstadium")
+  }
   return (
     <div className='bodyAdmin'>
     <header className="headerAdmin">
       <div className="header-content responsive-wrapper">
         <div className="header-logo">
-          <a href="#">
-            <div>
-              <img src="https://assets.codepen.io/285131/untitled-ui-icon.svg" />
-            </div>
-            <img src="https://assets.codepen.io/285131/untitled-ui.svg" />
-          </a>
+        
+            <h3> {authUser.role}</h3>        
         </div>
         <div className="header-navigation">
           <nav className="header-navigation-links">
-            <a href="#"> Home </a>
+            <a href="#"> {authUser.name} </a>
             <a href="#"> Dashboard </a>
             <a href="#"> Projects </a>
             <a href="#"> Tasks </a>
@@ -29,16 +34,11 @@ const Admin = ({auth}) => {
           <div className="header-navigation-actions">
             <a href="#" className="buttonAdmin">
               <i className="ph-lightning-bold" />
-              <span>Upgrade now</span>
+              <span onClick={()=>logout()}   >Logout </span>
             </a>
-            <a href="#" className="icon-button">
-              <i className="ph-gear-bold" />
-            </a>
-            <a href="#" className="icon-button">
-              <i className="ph-bell-bold" />
-            </a>
+           
             <a href="#" className="avatar">
-              <img src="https://assets.codepen.io/285131/hat-man.png" alt="" />
+             <img src="https://assets.codepen.io/285131/hat-man.png" alt="" />
             </a>
           </div>
         </div>
@@ -50,20 +50,21 @@ const Admin = ({auth}) => {
     </header>
     <main className="main">
       <div className="responsive-wrapper">
-        <div className="main-header">
-          <h1>Settings</h1>
-          <div className="search">
+        <div lassName="main-header">
+          <h1>ya Welcome </h1>
+{/*           lina search part 
+ */}         {/*  <div className="search">
             <input type="text" placeholder="Search" />
             <button type="submit">
               <i className="ph-magnifying-glass-bold" />
             </button>
-          </div>
+          </div> */}
         </div>
         <div className="horizontal-tabs">
-          <a href="#">My details</a>
-          <a href="#">Profile</a>
-          <a href="#">Password</a>
-          <a href="#">Team</a>
+          <a href="#">My Stadiums</a>
+          <a href="#"  onClick={()=>gotoaddstadiums()}  >Add Stadiums </a>
+          <a href="#">view users </a>
+          <a href="#">view reservations </a>
           <a href="#">Plan</a>
           <a href="#">Billing</a>
           <a href="#">Email</a>
@@ -71,7 +72,6 @@ const Admin = ({auth}) => {
           <a href="#" className="active">
             Integrations
           </a>
-          <a href="#">API</a>
         </div>
         <div className="content-headerAdmin">
        
@@ -82,7 +82,7 @@ const Admin = ({auth}) => {
             </a>
             <a href="#" className="buttonAdmin">
               <i className="ph-plus-bold" />
-              <span>Request integration</span>
+             <button >Addstadium</button>
             </a>
           </div>
         </div>

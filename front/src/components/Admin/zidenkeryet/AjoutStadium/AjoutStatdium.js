@@ -12,9 +12,9 @@ const AjoutStadium = () => {
 
   const handleSubmit=async(value)=>{
     await postStadiums(value)
+    await alert('you coulld add it ')
     navigate('/admin')
       }
-
   return (
     <div>
       <section className="MainContainer">
@@ -36,7 +36,7 @@ const AjoutStadium = () => {
                 onChange={(e) => setName(e.target.value)}
                 value={name}
               />
-              <label className="label">Img</label>
+              <label className="label">price</label>
               <input
                 className="input"
                 type="text"

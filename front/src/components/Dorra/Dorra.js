@@ -1,5 +1,5 @@
 import React from 'react'
-//import './Dorra.css'
+import './Dorra.css'
 import StadiumCards from '../Admin/zidenkeryet/Cards/StadiumCards'
 const Dorra = () => {
   return (

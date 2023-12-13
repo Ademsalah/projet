@@ -5,6 +5,7 @@ const port = 4000
 const connectdb = require ('./config/connecteddb')
 const userRoute = require ('./routes/routeuser')
 const stadiumRoute = require('./routes/stadiumRoute')
+const afra7Route = require('./routes/afra7Route')
 require('dotenv').config()
 app.use(cors())
 app.use(express.json())
@@ -19,6 +20,10 @@ app.use('/auth',userRoute)
 /* partie route yzid beha el admin les stadiums */
 app.use('/stadium',stadiumRoute)
 
+
+/* ///////////////rani nkhdem partie routet teb3in el admin /////////////// */
+/* partie route yzid beha el admin les salet afra7 */
+app.use('/afra7',afra7Route)
 /* ///////////////rani nkhdem partie routet teb3in el client /////////////// */
 
 app.listen(port,err=>{

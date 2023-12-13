@@ -158,8 +158,12 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 32px;
+    width: 182px;
     height: 32px;
+}
+.logo-icon img{
+    width: 143px;
+    margin-left: 4px;
 }
 .logo-title {
     display: flex;
